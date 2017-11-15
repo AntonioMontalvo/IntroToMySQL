@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Antonio Montalvo">
+    <meta name="description" content="The JOIN syntax.">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Montserrat:200" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>JOIN</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img id="logo" src="assets/images/logo.png" alt="Logo">
+            </div>
+            <div class="col-md-10">
+                <ul class=" nav nav-pills justify-content-end" id="level-nav">
+                    <li class="nav-item "><a class="nav-link" href="/">MySQL</a></li>
+                    <li class="nav-item "><a class="nav-link" href="/definition-statements">Definition Statements</a></li>
+                    <li class="nav-item "><a class="nav-link" href="#">Manipulation Statements</a></li>
+                    <li class="nav-item "><a class="nav-link" href="/subqueries">Subqueries and more</a></li>
+                    <li class="nav-item "><a class="nav-link" href="#">Basic Join Syntax</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Join Syntax</h1>
+                <hr class="my-4">
+            </div>
+        </div>
+    </div>
+    <div class="container" id="content">
+        <div class="row">
+            <div class="col-md-2">
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="https://dev.mysql.com/doc/refman/5.7/en/join.html" title="JOIN Syntax official" target="_blank">JOIN Syntax official</a></li>
+                    <li><a href="https://www.w3resource.com/mysql/advance-query-in-mysql/mysql-joins.php" title="w3resource" target="_blank">W3 MySQL JOIN </a></li>                    
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <h2>Working with two or more tables</h2>
+                <p>JOIN clauses are used to return the rows of two or more queries using two or more tables that shares a meaningful relationship based on a common set of values. Mostly but not all of the time, the join key is the primary key of one table and a foreign key in another table.</p>
+                <h2>INNER JOIN</h2>
+                <p>All rows can be selected from both participating tables as long as there is a match between the columns. Usage of INNER JOIN combines the tables. An INNER JOIN allows rows from either table to appear in the result if and only if both tables meet the conditions specified in the ON clause.</p>
+                <p>So far we have two tables. Our <b>users</b> and <b>states</b> tables. Let's combine the data for users and states according to the state and see what we get.</p>
+                <img src="assets/images/inner-join.png" alt="INNER JOIN">
+                <p>Cool. Now we can see for each user and according to their State some associated information.</p>
+                <h2>LEFT JOIN</h2>
+                <p>We can combine the users and state table selecting the name of the user and the population showing this in one table on the cases where the name of the state in the users table is the same as the name of the state in the states table. So we can see the population in the state that each user lives on.</p>
+                <img src="assets/images/LEFT-JOIN.png" alt="LEFT-JOIN">
+                <h2>RIGHT JOIN</h2>
+                <p>Lets' change LEFT JOIN FOR RIGHT JOIN and see what happens.</p>
+                <img src="assets/images/RIGHT-JOIN-1.png" alt="RIGHT-JOIN-1">
+                <p>As you can see when using RIGHT JOIN, the rresulting table uses all available cases on the population column. It matches the and return the name of the 4 users and is NOT found return NULL as the matching value.</p>
+                
+               
+            </div>
+            <div class="col-md-2">
+                <h5>In this page</h5>
+                <ul>
+                    <li><a href="#select-all">Select All Data</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+</body>
+
+</html>
